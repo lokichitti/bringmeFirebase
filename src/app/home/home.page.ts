@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  //constructor() {}
-  text = 'first text';
-  FnChangeText() {
-    this.text = 'text changed as the above see it, it is very clear can you?';
+  constructor()    {}
+  goToLoginPage() {
+    // tslint:disable-next-line: no-trailing-whitespace
+    
+  }
+  // tslint:disable-next-line: one-line
+  goToSignUpPage(){
+    // tslint:disable-next-line: no-trailing-whitespace
+
   }
 
 }

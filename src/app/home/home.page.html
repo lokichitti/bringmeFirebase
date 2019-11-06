@@ -1,14 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/login']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tasks List</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-  <div class="ion-padding">
-    <p>{{text}}</p>
-    <ion-button (click)=FnChangeText()>Change Text</ion-button>
-  </div>
-</ion-content>

@@ -1,6 +1,7 @@
-node_modules
-platforms
-www
-resources
-e2e
+node_modules,
+platforms,
+www,
+resources,
+e2e,
 plugins
+node_modules
