@@ -15,7 +15,7 @@ export class HomePage {
   // tslint:disable-next-line: one-line
   goToSignUpPage(){
     // tslint:disable-next-line: no-trailing-whitespace
-
+    
   }
 
 }
