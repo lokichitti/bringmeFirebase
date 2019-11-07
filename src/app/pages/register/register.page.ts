@@ -58,9 +58,7 @@ ngOnInit() {
     ])),
     phone: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(10),
-      Validators.minLength(10),
-      Validators.pattern('0-9'),
+      Validators.pattern('/^[0-9]{10}$/'),
     ])),
     country: new FormControl('', Validators.compose([
       Validators.pattern('a-zA-Z'),
@@ -73,52 +71,3 @@ goLoginPage(){
 }
 
 }
-
-export class PhoneValidator {
-
-  // Inspired on: https://github.com/yuyang041060120/ng2-validation/blob/master/src/equal-to/validator.ts
- static validCountryPhone = (countryControl: AbstractControl): ValidatorFn => {
-   let subscribe: boolean = false;
-
-   return (phoneControl: AbstractControl): {[key: string]: boolean} => {
-     if (!subscribe) {
-       subscribe = true;
-       countryControl.valueChanges.subscribe(() => {
-         phoneControl.updateValueAndValidity();
-       });
-     }
-     if(phoneControl.value !== ""){
-       try{
-         const phoneUtil = libphonenumber.PhoneNumberUtil.getInstance();
-         let phoneNumber = "" + phoneControl.value + "",
-             region = countryControl.value.iso,
-             number = phoneUtil.parse(phoneNumber, region),
-             isValidNumber = phoneUtil.isValidNumber(number);
-         if(isValidNumber){
-           return null;
-         }
-       }catch(e){
-         return {
-           validCountryPhone: true
-         };
-       }
-       return {
-         validCountryPhone: true
-       };
-     }
-     else{
-       return null;
-     }
-   };
- };
-
- this.country_phone_group = new FormGroup({
-  country: new FormControl(this.countries[0], Validators.required),
-  phone: new FormControl('', Validators.compose([
-  Validators.required,
-  PhoneValidator.validCountryPhone(country)
-]));
-});
-}
-
-
