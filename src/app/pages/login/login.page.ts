@@ -12,9 +12,6 @@ export class LoginPage implements OnInit {
   errorMessage: string = '';
 
   validation_messages = {
-    'name':[
-      { type: 'required', message: 'Name is required' },
-    ],
    'email': [
      { type: 'required', message: 'Email is optional you can leave it blank.' },
      { type: 'pattern', message: 'Please enter a valid email.' }
@@ -63,8 +60,13 @@ ngOnInit() {
     ]))
   });
 }
+
+tryLogin(value){
+    this.router.navigate(["/home"]);
+}
+
 goRegisterPage(){
-  this.router.navigate(["/register"]);
+  this.router.navigate(["/sign-up"]);
 }
 
 }
