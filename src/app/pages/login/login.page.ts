@@ -53,7 +53,9 @@ ngOnInit() {
     ])),
     phone: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.pattern('/^[0-9]{10}$/'),
+      Validators.minLength(10),
+      Validators.minLength(10),
+      Validators.pattern('0-9'),
     ])),
     country: new FormControl('', Validators.compose([
       Validators.pattern('a-zA-Z'),
