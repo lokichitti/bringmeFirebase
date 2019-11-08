@@ -71,7 +71,9 @@
       "id": "cordova-plugin-geolocation@^4.0.2"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+    }
   },
   "cordova-plugin-googlemaps": {
     "source": {
@@ -86,7 +88,7 @@
   "cordova-plugin-nativegeocoder": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-nativegeocoder"
+      "id": "cordova-plugin-nativegeocoder@^3.2.2"
     },
     "is_top_level": true,
     "variables": {}
