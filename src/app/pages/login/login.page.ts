@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Firebase } from '@ionic-native/firebase/ngx';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',

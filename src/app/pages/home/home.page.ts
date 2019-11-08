@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  search:"hello"
   constructor()    {}
   goToLoginPage() {
     // tslint:disable-next-line: no-trailing-whitespace

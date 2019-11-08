@@ -5,21 +5,69 @@
   !*** ./$$_lazy_route_resource lazy namespace object ***!
   \******************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncaught exception popping up in devtools
-	return Promise.resolve().then(function() {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
+var map = {
+	"./pages/info/info.module": [
+		"./src/app/pages/info/info.module.ts",
+		"pages-info-info-module"
+	],
+	"./pages/inside-main/inside-main.module": [
+		"./src/app/pages/inside-main/inside-main.module.ts",
+		"pages-inside-main-inside-main-module"
+	],
+	"./pages/login/login.module": [
+		"./src/app/pages/login/login.module.ts",
+		"pages-login-login-module"
+	],
+	"./pages/main/main.module": [
+		"./src/app/pages/main/main.module.ts",
+		"pages-main-main-module"
+	],
+	"./pages/map/map.module": [
+		"./src/app/pages/map/map.module.ts",
+		"pages-map-map-module"
+	],
+	"./pages/private/private.module": [
+		"./src/app/pages/private/private.module.ts",
+		"pages-private-private-module"
+	],
+	"./pages/product/product.module": [
+		"./src/app/pages/product/product.module.ts",
+		"pages-product-product-module"
+	],
+	"./pages/profile/profile.module": [
+		"./src/app/pages/profile/profile.module.ts",
+		"pages-profile-profile-module"
+	],
+	"./pages/public/public.module": [
+		"./src/app/pages/public/public.module.ts",
+		"pages-public-public-module"
+	],
+	"./pages/sign-up/sign-up.module": [
+		"./src/app/pages/sign-up/sign-up.module.ts",
+		"pages-sign-up-sign-up-module"
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(function() {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(id);
 	});
 }
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
@@ -469,7 +517,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', loadChildren: function () { return __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(function (m) { return m.HomePageModule; }); } },
+    { path: 'home', loadChildren: function () { return __webpack_require__.e(/*! import() | pages-home-home-module */ "pages-home-home-module").then(__webpack_require__.bind(null, /*! ./pages/home/home.module */ "./src/app/pages/home/home.module.ts")).then(function (m) { return m.HomePageModule; }); } },
+    { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+    { path: 'sign-up', loadChildren: './pages/sign-up/sign-up.module#SignUpPageModule' },
+    { path: 'inside-main', loadChildren: './pages/inside-main/inside-main.module#InsideMainPageModule' },
+    { path: 'public', loadChildren: './pages/public/public.module#PublicPageModule' },
+    { path: 'private', loadChildren: './pages/private/private.module#PrivatePageModule' },
+    { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
+    { path: 'product', loadChildren: './pages/product/product.module#ProductPageModule' },
+    { path: 'main', loadChildren: './pages/main/main.module#MainPageModule' },
+    { path: 'info', loadChildren: './pages/info/info.module#InfoPageModule' },
+    { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -496,7 +554,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"
+module.exports = "ion-app .nav-decor {\n  background-color: transparent !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2F6dXJlL0lPTklDL0xPS0EtR0lUL2JyaW5nbWVGaXJlYmFzZS9zcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksd0NBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1hcHAgLm5hdi1kZWNvciB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiAgfSIsImlvbi1hcHAgLm5hdi1kZWNvciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG59Il19 */"
 
 /***/ }),
 
@@ -575,6 +633,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/google-maps */ "./node_modules/@ionic-native/google-maps/index.js");
+
+
+
 
 
 
@@ -591,9 +655,15 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
             entryComponents: [],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]],
+            imports: [
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
+                _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].firebaseConfig) // imports firebase/app
+            ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
+                _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_11__["GoogleMaps"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
             ],
@@ -621,7 +691,17 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    firebaseConfig: {
+        apiKey: "AIzaSyCYf1JIAAlFt0T90KC2NL5mf7bCIM1KrW0",
+        authDomain: "loka-9163d.firebaseapp.com",
+        databaseURL: "https://loka-9163d.firebaseio.com",
+        projectId: "loka-9163d",
+        storageBucket: "loka-9163d.appspot.com",
+        messagingSenderId: "843337931901",
+        appId: "1:843337931901:web:e474009a7f1893704e6514",
+        measurementId: "G-40SCCSYW3R"
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -668,7 +748,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/azure/IONIC/LOKA/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/azure/IONIC/LOKA-GIT/bringmeFirebase/src/main.ts */"./src/main.ts");
 
 
 /***/ })

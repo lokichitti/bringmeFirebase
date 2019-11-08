@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'product', loadChildren: './pages/product/product.module#ProductPageModule' },
   { path: 'main', loadChildren: './pages/main/main.module#MainPageModule' },
   { path: 'info', loadChildren: './pages/info/info.module#InfoPageModule' },
+  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
 ];
 
 @NgModule({
